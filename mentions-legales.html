@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ============================================================
+       MENTIONS LÉGALES
+       ============================================================ -->
+  <title>Mentions légales · Côte et Cylindre</title>
+  <meta name="description" content="Mentions légales et politique de confidentialité du site Côte et Cylindre, garage moto à Plouguerneau.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#f7f5e4">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="icones/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="icones/favicon-64.png">
+  <link rel="apple-touch-icon" href="icones/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Big+Shoulders:opsz,wght@10..72,700..900&display=swap" rel="stylesheet">
+
+  <style>
+    /* Mêmes couleurs et polices que la page d'accueil (index.html) */
+    :root {
+      --creme: #f7f5e4;
+      --marine: #09377f;
+      --orange: #e28910;
+      --rouille: #792813;
+      --cambouis: #1a1a18;
+      --acier: #4a4a42;
+
+      --police-titre: "Big Shoulders", "Arial Narrow", Impact, sans-serif;
+      --police-texte: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+      --largeur-max: 1240px;
+      --marge: clamp(20px, 5vw, 64px);
+      --hauteur-entete: 64px;
+      --filet: 3px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--creme);
+      color: var(--cambouis);
+      font-family: var(--police-texte);
+      font-size: 18px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2 {
+      font-family: var(--police-titre);
+      line-height: .9;
+      margin: 0;
+      color: var(--marine);
+      text-wrap: balance;
+    }
+    p, ul, dl { margin: 0; }
+    a { color: inherit; }
+
+    /* ---------- En-tête ---------- */
+    .entete {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      height: calc(var(--hauteur-entete) + env(safe-area-inset-top));
+      padding: env(safe-area-inset-top) var(--marge) 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: rgba(247, 245, 228, .95);
+      border-bottom: var(--filet) solid var(--marine);
+    }
+    .entete-nom {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--marine);
+      font-family: var(--police-titre);
+      font-size: 26px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    .entete-nom img { width: 44px; height: 44px; flex: none; }
+    .retour {
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 6px 0;
+      border-bottom: var(--filet) solid transparent;
+      transition: border-color .2s;
+    }
+    .retour:hover { border-color: var(--orange); }
+
+    /* ---------- Contenu ---------- */
+    .page {
+      max-width: var(--largeur-max);
+      margin: 0 auto;
+      padding: clamp(56px, 9vw, 120px) var(--marge) clamp(80px, 10vw, 140px);
+    }
+    .page h1 {
+      font-size: clamp(56px, 10vw, 150px);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .mise-a-jour {
+      margin: 20px 0 clamp(40px, 6vw, 72px);
+      color: var(--acier);
+      font-size: 16px;
+    }
+
+    /* Une rubrique par ligne : titre à gauche, contenu à droite */
+    .rubrique {
+      display: grid;
+      grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+      gap: 16px clamp(24px, 5vw, 80px);
+      padding: clamp(24px, 3vw, 36px) 0 clamp(32px, 4vw, 48px);
+      border-top: var(--filet) solid var(--marine);
+    }
+    .rubrique:last-of-type { border-bottom: var(--filet) solid var(--marine); }
+    .rubrique h2 { font-size: clamp(30px, 3.4vw, 44px); font-weight: 800; }
+    .rubrique-texte { max-width: 64ch; }
+    .rubrique-texte p + p,
+    .rubrique-texte p + ul,
+    .rubrique-texte ul + p,
+    .rubrique-texte dl + p { margin-top: 1em; }
+    .rubrique-texte ul { padding-left: 1.2em; }
+    .rubrique-texte li + li { margin-top: .5em; }
+
+    /* Fiche d'identité : libellé / valeur */
+    .fiche {
+      display: grid;
+      grid-template-columns: max-content minmax(0, 1fr);
+      gap: 8px 24px;
+    }
+    .fiche dt { font-weight: 600; color: var(--acier); }
+    .fiche dd { margin: 0; overflow-wrap: anywhere; }
+
+    .rubrique-texte a {
+      text-decoration-color: var(--orange);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+    .rubrique-texte a:hover { color: var(--rouille); }
+
+
+    /* ---------- Pied de page ---------- */
+    .pied { background: var(--cambouis); color: #bdbbad; }
+    .pied-contenu {
+      max-width: var(--largeur-max);
+      margin: 0 auto;
+      padding: 36px var(--marge) calc(40px + env(safe-area-inset-bottom));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px 24px;
+      font-size: 15px;
+    }
+    .pied strong {
+      font-family: var(--police-titre);
+      font-size: 24px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--creme);
+    }
+
+    a:focus-visible { outline: var(--filet) solid var(--marine); outline-offset: 4px; }
+    .pied a:focus-visible { outline-color: var(--orange); }
+
+    @media (max-width: 800px) {
+      .rubrique { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      :root { --hauteur-entete: 56px; }
+      body { font-size: 17px; }
+      .entete-nom { font-size: 21px; }
+      .entete-nom img { width: 40px; height: 40px; }
+      .fiche { grid-template-columns: 1fr; gap: 2px; }
+      .fiche dd + dt { margin-top: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="entete">
+    <a class="entete-nom" href="index.html">
+      <img src="logo-cote-et-cylindre.webp" width="480" height="480" alt="">
+      <span>Côte et Cylindre</span>
+    </a>
+    <a class="retour" href="index.html">Retour au site</a>
+  </header>
+
+  <main class="page">
+    <h1>Mentions légales</h1>
+    <p class="mise-a-jour">Dernière mise à jour : 30 septembre 2026</p>
+
+    <!-- ============================================================
+         1. ÉDITEUR (article 6 de la loi n° 2004-575 du 21 juin 2004, LCEN)
+         ============================================================ -->
+    <section class="rubrique">
+      <h2>Éditeur du site</h2>
+      <div class="rubrique-texte">
+        <dl class="fiche">
+          <dt>Nom commercial</dt>
+          <dd>Côte et Cylindre</dd>
+          <dt>Exploitant</dt>
+          <dd>Timothée Draghi, EI</dd>
+          <dt>Forme juridique</dt>
+          <dd>Entrepreneur individuel</dd>
+          <dt>Adresse</dt>
+          <dd>2 rue de Tréménach, 29880 Plouguerneau, France</dd>
+          <dt>SIRET</dt>
+          <dd>994 173 086 00020</dd>
+          <dt>Immatriculation</dt>
+          <dd>Registre national des entreprises (RNE)</dd>
+          <dt>TVA</dt>
+          <dd>TVA non applicable, article 293 B du CGI</dd>
+          <dt>Directeur de la publication</dt>
+          <dd>Timothée Draghi</dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. HÉBERGEUR
+         Le site semble publié via GitHub. Si vous utilisez un autre
+         hébergeur (OVH, o2switch, Netlify…), remplacez ce bloc.
+         ============================================================ -->
+    <section class="rubrique">
+      <h2>Hébergement</h2>
+      <div class="rubrique-texte">
+        <dl class="fiche">
+          <dt>Hébergeur</dt>
+          <dd>GitHub, Inc. (service GitHub Pages)</dd>
+          <dt>Adresse</dt>
+          <dd>88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</dd>
+          <dt>Site</dt>
+          <dd><a href="https://github.com" target="_blank" rel="noopener">github.com</a></dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. PROPRIÉTÉ INTELLECTUELLE
+         ============================================================ -->
+    <section class="rubrique">
+      <h2>Propriété intellectuelle</h2>
+      <div class="rubrique-texte">
+        <p>Les textes, le logo, les photographies et l'animation présents sur ce site sont la propriété de Côte et Cylindre ou sont utilisés avec l'autorisation de leurs auteurs. Toute reproduction, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
+        <p>Honda est une marque déposée de Honda Motor Co., Ltd. Sa mention sur ce site sert uniquement à décrire le parcours professionnel de Timothée Draghi et les motos présentées. Côte et Cylindre n'est pas un concessionnaire officiel de la marque.</p>
+        <p>Les polices de caractères Big Shoulders et Barlow sont distribuées sous licence SIL Open Font License.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. DONNÉES PERSONNELLES (RGPD)
+         ============================================================ -->
+    <section class="rubrique">
+      <h2>Données personnelles</h2>
+      <div class="rubrique-texte">
+        <p>Ce site ne comporte ni formulaire, ni espace client, ni outil de mesure d'audience. Côte et Cylindre ne collecte donc aucune donnée personnelle lors de votre visite.</p>
+        <p>Si vous nous écrivez par email, votre adresse et le contenu de votre message servent uniquement à vous répondre et à traiter votre demande (devis, rendez-vous, vente). Ils ne sont jamais cédés à des tiers. Ils sont conservés le temps nécessaire à ce suivi, et au plus trois ans après notre dernier échange, sauf obligation légale de conservation plus longue (factures, par exemple).</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. COOKIES
+         ============================================================ -->
+    <section class="rubrique">
+      <h2>Cookies</h2>
+      <div class="rubrique-texte">
+        <p>Ce site ne dépose aucun cookie publicitaire ni de mesure d'audience. Aucun bandeau de consentement n'est donc nécessaire.</p>
+        <p>Les sites vers lesquels il renvoie (Google Maps pour l'itinéraire, Instagram) appliquent leur propre politique de cookies lorsque vous les ouvrez.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. LIENS EXTERNES
+         ============================================================ -->
+    <section class="rubrique">
+      <h2>Liens externes</h2>
+      <div class="rubrique-texte">
+        <p>Ce site contient des liens vers d'autres sites, notamment Google Maps et Instagram. Côte et Cylindre n'a aucun contrôle sur leur contenu et ne peut être tenu responsable des informations qu'ils publient.</p>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         7. DROIT APPLICABLE
+         ============================================================ -->
+    <section class="rubrique">
+      <h2>Droit applicable</h2>
+      <div class="rubrique-texte">
+        <p>Les présentes mentions légales sont régies par le droit français. À défaut de résolution amiable, tout litige relève des tribunaux français compétents.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="pied-contenu">
+      <strong>Côte et Cylindre</strong>
+      <span>2 rue de Tréménach, 29880 Plouguerneau</span>
+      <span>© <span id="annee">2026</span> Côte et Cylindre</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("annee").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

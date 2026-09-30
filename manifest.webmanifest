@@ -1,0 +1,15 @@
+{
+  "name": "Côte et Cylindre",
+  "short_name": "Côte et Cylindre",
+  "description": "Vente, entretien et réparation de motos à Plouguerneau.",
+  "lang": "fr",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f5e4",
+  "theme_color": "#09377f",
+  "icons": [
+    { "src": "icones/icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icones/icone-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icones/icone-masquable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -12,12 +12,18 @@
   <title>Côte et Cylindre · Garage moto, vente et réparation à Plouguerneau</title>
   <meta name="description" content="Côte et Cylindre, magasin et atelier de réparation de motos à Plouguerneau (Finistère nord) : vente de motos sélectionnées, entretien, révisions, diagnostics toutes marques et conseils.">
   <meta name="keywords" content="moto, garage moto, réparation moto, entretien moto, vente moto, Plouguerneau, Finistère, Brest, Lannilis">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f7f5e4">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:title" content="Côte et Cylindre · Garage moto à Plouguerneau">
   <meta property="og:description" content="Vente, entretien et réparation de motos à Plouguerneau, dans le Finistère nord.">
   <meta property="og:image" content="0121.webp">
+
+  <!-- Icônes : onglet du navigateur, écran d'accueil du téléphone, application -->
+  <link rel="icon" type="image/png" sizes="32x32" href="icones/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="icones/favicon-64.png">
+  <link rel="apple-touch-icon" href="icones/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
 
   <!-- Données structurées : aident Google à afficher le garage dans les résultats locaux -->
   <script type="application/ld+json">
@@ -27,6 +33,13 @@
     "name": "Côte et Cylindre",
     "description": "Vente, entretien et réparation de motos à Plouguerneau.",
     "email": "coteetcylindre@gmail.com",
+    "telephone": "+33743713618",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "13:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "14:00", "closes": "18:00" }
+    ],
+    "logo": "logo-cote-et-cylindre.webp",
+    "founder": { "@type": "Person", "name": "Timothée Draghi" },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "2 rue de Tréménach",
@@ -39,10 +52,13 @@
   }
   </script>
 
-  <!-- Polices Google : Fraunces (titres, à empattements) et Inter (texte) -->
+  <!-- Polices Google :
+       Big Shoulders (titres, grotesque condensée industrielle),
+       Big Shoulders Stencil (grand titre et tampon, lettrage au pochoir),
+       Barlow (texte, dessinée d'après la signalisation routière) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Big+Shoulders:opsz,wght@10..72,700..900&family=Big+Shoulders+Stencil:opsz,wght@10..72,800..900&display=swap" rel="stylesheet">
 
   <style>
     /* ============================================================
@@ -50,22 +66,26 @@
        Changez les couleurs ici : elles s'appliquent à tout le site.
        ============================================================ */
     :root {
-      --fond: #ffffff;            /* fond de page */
-      --texte: #111111;           /* texte principal */
-      --texte-doux: #6b6b6b;      /* texte secondaire */
-      --ligne: #e4e1dc;           /* fines lignes de séparation */
-      --accent: #a8683c;          /* couleur d'accent (cuivre), à utiliser avec parcimonie */
-      --accent-fonce: #8a5230;    /* accent au survol */
-      --fond-animation: #e9e9e9;  /* couleur de secours derrière l'animation */
-      --texte-sur-image: #ffffff; /* texte affiché par-dessus l'animation */
-      --ombre-texte: 0 2px 4px rgba(0,0,0,.25), 0 4px 28px rgba(0,0,0,.35); /* ombre qui rend le texte blanc lisible */
+      /* Couleurs reprises du logo */
+      --creme: #f7f5e4;           /* fond de page : le fond crème du logo */
+      --marine: #09377f;          /* bleu marine des anneaux et du phare : titres, filets, bandeau */
+      --marine-texte: #d3dcec;    /* texte courant sur le marine */
+      --orange: #e28910;          /* orange du lettrage et de la lanterne : boutons et détails, avec parcimonie */
+      --rouille: #792813;         /* brun de la chaîne : liens au survol */
+      /* Couleurs d'atelier */
+      --beton: #d8d8d5;           /* gris du studio des photos : écran de chargement et animation */
+      --beton-fonce: #c4c4c0;     /* rail de la barre de chargement */
+      --cambouis: #1a1a18;        /* noir de graisse : texte principal, pied de page */
+      --acier: #4a4a42;           /* texte secondaire */
 
-      --police-titre: "Fraunces", Georgia, "Times New Roman", serif;
-      --police-texte: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --police-titre: "Big Shoulders", "Arial Narrow", Impact, sans-serif;
+      --police-pochoir: "Big Shoulders Stencil", "Big Shoulders", "Arial Narrow", Impact, sans-serif;
+      --police-texte: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
 
-      --largeur-max: 1120px;      /* largeur maximale du contenu */
-      --marge: clamp(20px, 5vw, 56px);
-      --hauteur-entete: 60px;
+      --largeur-max: 1240px;      /* largeur maximale du contenu */
+      --marge: clamp(20px, 5vw, 64px);
+      --hauteur-entete: 64px;
+      --filet: 3px;               /* épaisseur des traits de séparation */
     }
 
     /* ---------- Base ---------- */
@@ -73,11 +93,11 @@
     html { -webkit-text-size-adjust: 100%; }
     body {
       margin: 0;
-      background: var(--fond);
-      color: var(--texte);
+      background: var(--creme);
+      color: var(--cambouis);
       font-family: var(--police-texte);
-      font-size: 17px;
-      line-height: 1.65;
+      font-size: 18px;
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -85,10 +105,10 @@
     a { color: inherit; }
     h1, h2, h3 {
       font-family: var(--police-titre);
-      font-weight: 400;
-      line-height: 1.1;
-      letter-spacing: -0.01em;
+      font-weight: 800;
+      line-height: .9;
       margin: 0;
+      text-wrap: balance;
     }
     p { margin: 0; }
 
@@ -101,7 +121,7 @@
     body.chargement { overflow: hidden; }
 
     /* ============================================================
-       ÉCRAN DE CHARGEMENT (pourcentage discret)
+       ÉCRAN DE CHARGEMENT (compteur façon compte-tours)
        ============================================================ */
     .chargeur {
       position: fixed;
@@ -109,37 +129,38 @@
       z-index: 100;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      background: var(--fond);
+      justify-content: flex-end;
+      padding: var(--marge);
+      padding-bottom: calc(var(--marge) + env(safe-area-inset-bottom));
+      background: var(--beton);
       transition: opacity .8s ease, visibility .8s ease;
     }
     .chargeur.cache { opacity: 0; visibility: hidden; }
-    .chargeur-nom {
+    .chargeur-logo {
+      width: clamp(96px, 12vw, 148px);
+      height: auto;
+    }
+    .chargeur-pourcentage {
       font-family: var(--police-titre);
-      font-size: 20px;
-      font-style: italic;
-      color: var(--texte-doux);
+      font-size: clamp(88px, 18vw, 240px);
+      font-weight: 900;
+      line-height: .8;
+      font-variant-numeric: tabular-nums;
+      color: var(--marine);
+      margin: 20px 0 20px;
     }
     .chargeur-barre {
-      width: 120px;
-      height: 1px;
-      background: var(--ligne);
+      width: 100%;
+      height: 6px;
+      background: var(--beton-fonce);
       overflow: hidden;
     }
     .chargeur-barre span {
       display: block;
       height: 100%;
       width: 0%;
-      background: var(--accent);
+      background: var(--orange);
       transition: width .2s linear;
-    }
-    .chargeur-pourcentage {
-      font-size: 12px;
-      letter-spacing: .12em;
-      color: var(--texte-doux);
-      font-variant-numeric: tabular-nums;
     }
 
     /* ============================================================
@@ -149,33 +170,39 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 50;
-      height: var(--hauteur-entete);
-      padding: 0 var(--marge);
-      padding-top: env(safe-area-inset-top);
+      height: calc(var(--hauteur-entete) + env(safe-area-inset-top));
+      padding: env(safe-area-inset-top) var(--marge) 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(255, 255, 255, .72);
-      -webkit-backdrop-filter: saturate(180%) blur(16px);
-      backdrop-filter: saturate(180%) blur(16px);
-      border-bottom: 1px solid rgba(0, 0, 0, .06);
+      gap: 16px;
+      background: rgba(247, 245, 228, .95);
+      border-bottom: var(--filet) solid var(--marine);
     }
     .entete-nom {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--marine);
       font-family: var(--police-titre);
-      font-size: 19px;
+      font-size: 26px;
+      font-weight: 900;
+      text-transform: uppercase;
       text-decoration: none;
       white-space: nowrap;
+      line-height: 1;
     }
-    .entete nav { display: flex; gap: clamp(16px, 3vw, 36px); }
+    .entete-nom img { width: 44px; height: 44px; flex: none; }
+    .entete nav { display: flex; gap: clamp(18px, 3vw, 40px); }
     .entete nav a {
-      font-size: 13px;
-      letter-spacing: .02em;
+      font-size: 16px;
+      font-weight: 600;
       text-decoration: none;
-      color: var(--texte);
-      opacity: .8;
-      transition: opacity .2s, color .2s;
+      padding: 6px 0;
+      border-bottom: var(--filet) solid transparent;
+      transition: border-color .2s;
     }
-    .entete nav a:hover { opacity: 1; color: var(--accent); }
+    .entete nav a:hover { border-color: var(--orange); }
 
     /* ============================================================
        2. OUVERTURE : ANIMATION DE LA MOTO
@@ -186,7 +213,7 @@
       position: relative;
       height: 100vh;
       height: 100lvh;
-      background: var(--fond-animation);
+      background: var(--beton);
     }
     .ouverture-scene {
       position: sticky;
@@ -203,25 +230,26 @@
       display: block;
     }
 
-    /* Les 3 phrases qui apparaissent pendant l'assemblage */
+    /* Les 3 phrases qui apparaissent pendant l'assemblage :
+       des bandes marine posées sur l'image, comme des étiquettes d'atelier */
     .phrases {
       position: absolute;
-      left: 0; right: 0;
-      bottom: clamp(56px, 11vh, 120px);
-      text-align: center;
+      left: var(--marge); right: var(--marge);
+      bottom: clamp(40px, 9vh, 104px);
       pointer-events: none;
     }
     .phrase {
       position: absolute;
-      left: 0; right: 0;
+      left: 0;
       bottom: 0;
-      padding: 0 var(--marge);
+      max-width: 100%;
+      padding: .12em .4em .16em;
       font-family: var(--police-titre);
-      font-size: clamp(28px, 4.4vw, 56px);
-      font-weight: 700;
-      font-style: italic;
-      color: var(--texte-sur-image);
-      text-shadow: var(--ombre-texte);
+      font-size: clamp(30px, 4.6vw, 64px);
+      font-weight: 800;
+      line-height: 1;
+      background: var(--marine);
+      color: var(--creme);
       opacity: 0;
     }
 
@@ -229,67 +257,64 @@
     .final {
       position: absolute;
       left: 0; right: 0;
-      top: calc(var(--hauteur-entete) + clamp(24px, 6vh, 72px));
+      top: calc(var(--hauteur-entete) + clamp(16px, 4vh, 48px));
       padding: 0 var(--marge);
       text-align: center;
       pointer-events: none;
     }
     .final-filet {
       display: block;
-      width: 40px;
-      height: 2px;
-      margin: 0 auto 22px;
-      background: var(--accent);
+      width: 64px;
+      height: 6px;
+      margin: 0 auto 16px;
+      background: var(--orange);
       opacity: 0;
     }
     .final h1 {
-      font-size: clamp(44px, 8vw, 112px);
-      font-weight: 700;
-      color: var(--texte-sur-image);
-      text-shadow: var(--ombre-texte);
+      font-family: var(--police-pochoir);
+      font-size: clamp(56px, min(10vw, 15vh), 184px);   /* limité par la hauteur : laisse la place à la moto */
+      font-weight: 900;
+      line-height: .82;
+      text-transform: uppercase;
+      color: var(--marine);
       opacity: 0;
     }
     .final p {
-      margin-top: 14px;
-      font-size: clamp(15px, 1.6vw, 19px);
+      margin-top: clamp(10px, 1.6vh, 18px);
+      font-size: clamp(16px, 1.6vw, 21px);
       font-weight: 600;
-      color: var(--texte-sur-image);
-      text-shadow: var(--ombre-texte);
       opacity: 0;
     }
 
-    /* Indication « faites défiler » */
+    /* Indication « Défiler » */
     .indice {
       position: absolute;
       left: 50%;
-      bottom: 28px;
+      bottom: 24px;
+      z-index: 2;                /* au-dessus du fondu bas */
       transform: translateX(-50%);
-      font-size: 20px;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: linear-gradient(var(--texte-sur-image));
-      font-weight: 600;
-      text-shadow: var(--ombre-texte);
-      opacity: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      opacity: 0;
     }
     .indice::after {
       content: "";
-      width: 3px;
-      height: 32px;
-      background-color: linear-gradient(var(--texte-sur-image), transparent);
+      width: var(--filet);
+      height: 36px;
+      background: var(--marine);
     }
 
-    /* Fondu vers le blanc sous l'animation */
-    .ouverture::after {
+    /* Fondu de l'animation (gris studio) vers le fond de page (crème) */
+    .ouverture-scene::after {
       content: "";
       position: absolute;
       left: 0; right: 0; bottom: 0;
-      height: 8vh;
-      background: linear-gradient(rgba(255,255,255,0), var(--fond));
+      height: 14vh;
+      background: linear-gradient(rgba(247, 245, 228, 0), var(--creme));
       pointer-events: none;
     }
 
@@ -299,145 +324,259 @@
     .section {
       max-width: var(--largeur-max);
       margin: 0 auto;
-      padding: clamp(88px, 14vw, 180px) var(--marge);
-      scroll-margin-top: var(--hauteur-entete);
+      padding: clamp(80px, 12vw, 160px) var(--marge);
     }
-    .section-tete {
-      display: flex;
-      align-items: baseline;
-      gap: 18px;
-      padding-bottom: 20px;
-      margin-bottom: clamp(40px, 6vw, 72px);
-      border-bottom: 1px solid var(--ligne);
+    .ancre { scroll-margin-top: var(--hauteur-entete); }
+    .insecable { white-space: nowrap; }   /* empêche la coupure sur le trait d'union */
+    .section-tete h2.titre-long { font-size: clamp(46px, 11vw, 168px); }   /* titre long : plus petit sur mobile */
+    .section-tete h2 {
+      font-size: clamp(64px, 11vw, 168px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--marine);
+      margin-bottom: clamp(32px, 5vw, 64px);
     }
-    .numero {
-      font-family: var(--police-titre);
-      font-size: 15px;
-      font-style: italic;
-      color: var(--accent);
-      font-variant-numeric: tabular-nums;
-    }
-    .section-tete h2 { font-size: clamp(36px, 5.2vw, 64px); }
 
-    /* ---------- 3. Services ---------- */
-    .services {
+    /* ---------- 3. Services : une ligne par métier, comme un tableau d'atelier ---------- */
+    .service {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(32px, 4vw, 56px);
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+      gap: 16px clamp(24px, 5vw, 80px);
+      padding: clamp(24px, 3vw, 36px) 0 clamp(32px, 4vw, 48px);
+      border-top: var(--filet) solid var(--marine);
     }
-    .service { border-top: 1px solid var(--texte); padding-top: 22px; }
-    .service-num {
-      font-size: 12px;
-      letter-spacing: .14em;
-      color: var(--texte-doux);
+    .service:last-child { border-bottom: var(--filet) solid var(--marine); }
+    .service h3 { font-size: clamp(36px, 4.4vw, 60px); }
+    .service p {
+      max-width: 50ch;
+      padding-top: .3em;
+      color: var(--acier);
+      font-size: clamp(17px, 1.4vw, 19px);
     }
-    .service h3 {
-      font-size: clamp(24px, 2.4vw, 30px);
-      margin: 18px 0 12px;
-    }
-    .service p { color: var(--texte-doux); font-size: 16px; }
 
-    /* ---------- 4. Atelier ---------- */
+    /* ---------- 4. Qui sommes-nous : photo et parcours ---------- */
+    .equipe {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+      gap: clamp(32px, 5vw, 80px);
+      align-items: start;
+    }
+    .equipe-photo { margin: 0; }
+    .equipe-photo img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 781 / 713;
+      object-fit: cover;
+      background: var(--beton);
+    }
+    .equipe-photo figcaption {
+      margin-top: 12px;
+      font-size: 15px;
+      color: var(--acier);
+    }
+    .equipe-texte .equipe-accroche {
+      font-family: var(--police-titre);
+      font-size: clamp(34px, 3.6vw, 50px);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--marine);
+      text-wrap: balance;
+      margin-bottom: 28px;
+    }
+    .equipe-texte { max-width: 60ch; }
+    .equipe-texte p { font-size: clamp(17px, 1.4vw, 19px); }
+    .equipe-texte p + p { margin-top: 1.1em; }
+
+    /* Parcours : une ligne par étape, dans l'ordre chronologique */
+    .parcours {
+      list-style: none;
+      margin: 40px 0 0;
+      padding: 0;
+    }
+    .parcours li {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: 4px 24px;
+      padding: 14px 0 16px;
+      border-top: var(--filet) solid var(--marine);
+    }
+    .parcours li:last-child { border-bottom: var(--filet) solid var(--marine); }
+    .parcours strong {
+      font-family: var(--police-titre);
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.05;
+      color: var(--marine);
+    }
+    .parcours span { font-size: 17px; color: var(--acier); padding-top: 2px; }
+
+    /* ---------- 5. Atelier : bandeau bleu marine ---------- */
+    .bandeau-bleu {
+      background: var(--marine);
+      color: var(--marine-texte);
+    }
+    .bandeau-bleu .section-tete h2 { color: var(--creme); }
     .atelier {
       display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: clamp(32px, 6vw, 96px);
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+      gap: clamp(32px, 5vw, 80px);
       align-items: start;
+      padding-top: clamp(24px, 3vw, 36px);
+      border-top: var(--filet) solid var(--creme);
     }
     .atelier-accroche {
       font-family: var(--police-titre);
-      font-size: clamp(26px, 3vw, 38px);
-      font-style: italic;
-      font-weight: 300;
-      line-height: 1.25;
+      font-size: clamp(34px, 3.8vw, 54px);
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+      text-wrap: balance;
     }
+    .atelier-texte { max-width: 60ch; }
+    .atelier-texte p { font-size: clamp(17px, 1.4vw, 19px); }
     .atelier-texte p + p { margin-top: 1.1em; }
-    .atelier-texte p { font-size: clamp(17px, 1.5vw, 19px); color: #2c2c2c; }
     .signature {
-      margin-top: 32px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-size: 13px;
-      letter-spacing: .1em;
+      display: inline-block;
+      margin-top: 36px;
+      padding: 10px 16px 8px;
+      border: var(--filet) solid var(--orange);
+      font-family: var(--police-pochoir);
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1;
       text-transform: uppercase;
-      color: var(--texte-doux);
-    }
-    .signature::before {
-      content: "";
-      width: 32px;
-      height: 1px;
-      background: var(--accent);
+      color: var(--orange);
     }
 
-    /* ---------- 5. Contact ---------- */
+    /* ---------- 6. Contact ---------- */
     .contact {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(32px, 4vw, 56px);
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.35fr) minmax(0, .9fr);
+      gap: 0 clamp(24px, 4vw, 56px);
+      margin: 0;
+    }
+    .contact-bloc {
+      padding-top: clamp(20px, 2.4vw, 28px);
+      border-top: var(--filet) solid var(--marine);
     }
     .contact-bloc dt {
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--texte-doux);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--acier);
       margin-bottom: 10px;
     }
-    .contact-bloc dd { margin: 0; font-size: 18px; }
+    .contact-bloc dd {
+      margin: 0;
+      font-family: var(--police-titre);
+      font-size: clamp(28px, 2.8vw, 38px);
+      font-weight: 800;
+      line-height: 1.05;
+    }
+    .contact-bloc dd + dt { margin-top: 24px; }
+
+    /* Horaires : ligne pleine largeur sous les trois blocs */
+    .contact-horaires {
+      grid-column: 1 / -1;
+      margin-top: clamp(40px, 5vw, 64px);
+    }
+    .horaires {
+      display: grid;
+      grid-template-columns: max-content minmax(0, 1fr);
+      gap: 8px clamp(24px, 4vw, 56px);
+      margin: 0;
+    }
+    .contact-bloc .horaires dt {
+      font-family: var(--police-titre);
+      font-size: inherit;
+      font-weight: 800;
+      color: var(--marine);
+      margin: 0;
+    }
+    .contact-bloc .horaires dd { margin: 0; }
     .lien-discret {
       display: inline-block;
-      margin-top: 8px;
-      font-size: 14px;
-      color: var(--accent);
+      margin-top: 20px;
+      padding: 12px 22px;
+      font-family: var(--police-texte);
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--marine);
+      background: var(--orange);
       text-decoration: none;
-      border-bottom: 1px solid currentColor;
+      transition: background-color .2s, color .2s;
+    }
+    .lien-discret:hover { background: var(--marine); color: var(--creme); }
+    .contact-bloc a.lien-texte {
+      text-decoration: underline;
+      text-decoration-color: var(--orange);
+      text-decoration-thickness: var(--filet);
+      text-underline-offset: 6px;
+      overflow-wrap: anywhere;
       transition: color .2s;
     }
-    .lien-discret:hover { color: var(--accent-fonce); }
-    .contact-bloc a.lien-texte {
-      text-decoration: none;
-      border-bottom: 1px solid var(--ligne);
-      transition: border-color .2s;
-      word-break: break-word;
-    }
-    .contact-bloc a.lien-texte:hover { border-color: var(--texte); }
-    .contact-action { margin-top: clamp(48px, 7vw, 80px); text-align: center; }
-
+    .contact-bloc a.lien-texte:hover { color: var(--rouille); }
 
     /* ============================================================
-       6. PIED DE PAGE
+       7. PIED DE PAGE
        ============================================================ */
     .pied {
+      background: var(--cambouis);
+      color: #bdbbad;
+    }
+    .pied-contenu {
       max-width: var(--largeur-max);
       margin: 0 auto;
-      padding: 32px var(--marge) calc(40px + env(safe-area-inset-bottom));
-      border-top: 1px solid var(--ligne);
+      padding: 36px var(--marge) calc(40px + env(safe-area-inset-bottom));
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      align-items: baseline;
       gap: 8px 24px;
-      font-size: 13px;
-      color: var(--texte-doux);
+      font-size: 15px;
     }
-    .pied strong { font-family: var(--police-titre); font-weight: 400; font-size: 15px; color: var(--texte); }
+    .pied strong {
+      font-family: var(--police-titre);
+      font-size: 24px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--creme);
+    }
 
-    /* Élément animé au scroll (fondu + léger glissement vers le haut) */
-    .apparition { will-change: opacity, transform; }
+    .pied a { text-decoration-color: var(--orange); text-underline-offset: 4px; }
+    .pied a:hover { color: var(--creme); }
 
     /* Focus clavier visible */
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    a:focus-visible { outline: var(--filet) solid var(--marine); outline-offset: 4px; }
+    .bandeau-bleu a:focus-visible, .pied a:focus-visible { outline-color: var(--orange); }
 
     /* ============================================================
        MOBILE
        ============================================================ */
     @media (max-width: 800px) {
-      .services, .contact, .atelier { grid-template-columns: 1fr; }
+      .service, .equipe, .atelier, .contact { grid-template-columns: 1fr; }
+      .contact { gap: 40px; }
+      .contact-horaires { margin-top: 0; }
+      .horaires { grid-template-columns: 1fr; gap: 2px; }
+      .contact-bloc .horaires dd + dt { margin-top: 14px; }
+      .service p { padding-top: 0; }
     }
     @media (max-width: 520px) {
       :root { --hauteur-entete: 56px; }
-      body { font-size: 16px; }
-      .entete-nom { font-size: 17px; }
-      .entete nav { gap: 14px; }
+      body { font-size: 17px; }
+      .entete nav { gap: 12px; }
+      .entete nav a { font-size: 13px; }
+    }
+    @media (max-width: 720px) {
+      /* Sur petit écran, le logo seul : le nom reste lu par les lecteurs d'écran */
+      .entete-nom span {
+        position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip: rect(0 0 0 0); white-space: nowrap;
+      }
+      .entete-nom img { width: 40px; height: 40px; }
+    }
+    @media (max-width: 360px) {
+      .entete nav { gap: 9px; }
       .entete nav a { font-size: 12px; }
     }
   </style>
@@ -447,18 +586,22 @@
 
   <!-- Écran de chargement : disparaît quand toutes les images sont prêtes -->
   <div class="chargeur" id="chargeur" aria-live="polite">
-    <div class="chargeur-nom">Côte et Cylindre</div>
-    <div class="chargeur-barre"><span id="chargeur-barre"></span></div>
+    <img class="chargeur-logo" src="logo-cote-et-cylindre.webp" width="480" height="480" alt="Côte et Cylindre">
     <div class="chargeur-pourcentage" id="chargeur-pourcentage">0 %</div>
+    <div class="chargeur-barre"><span id="chargeur-barre"></span></div>
   </div>
 
   <!-- ============================================================
        1. EN-TÊTE
        ============================================================ -->
   <header class="entete">
-    <a class="entete-nom" href="#haut">Côte et Cylindre</a>
+    <a class="entete-nom" href="#haut">
+      <img src="logo-cote-et-cylindre.webp" width="480" height="480" alt="">
+      <span>Côte et Cylindre</span>
+    </a>
     <nav aria-label="Navigation principale">
       <a href="#services">Services</a>
+      <a href="#qui-sommes-nous">Qui sommes-nous</a>
       <a href="#atelier">Atelier</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -467,7 +610,7 @@
   <main id="haut">
 
     <!-- ============================================================
-         2. OUVERTURE : la moto s'assemble au scroll
+         2. OUVERTURE : la moto s'assemble au chargement
          ============================================================ -->
     <section class="ouverture" id="ouverture" aria-label="Présentation">
       <div class="ouverture-scene">
@@ -494,25 +637,21 @@
     <!-- ============================================================
          3. SERVICES
          ============================================================ -->
-    <section class="section" id="services">
-      <div class="section-tete apparition">
-        <span class="numero">01</span>
+    <section class="section ancre" id="services">
+      <div class="section-tete">
         <h2>Services</h2>
       </div>
 
       <div class="services">
-        <article class="service apparition">
-          <span class="service-num">I</span>
+        <article class="service">
           <h3>Vente</h3>
           <p>Des motos sélectionnées une à une, contrôlées à l'atelier, et un conseil honnête pour choisir celle qui vous ressemble.</p>
         </article>
-        <article class="service apparition">
-          <span class="service-num">II</span>
+        <article class="service">
           <h3>Entretien et réparation</h3>
           <p>Toutes marques. Révisions, diagnostics, remises en état : chaque intervention est faite avec méthode et expliquée clairement.</p>
         </article>
-        <article class="service apparition">
-          <span class="service-num">III</span>
+        <article class="service">
           <h3>Conseils</h3>
           <p>Un accompagnement personnalisé pour chaque motard, du premier achat aux projets de préparation.</p>
         </article>
@@ -520,46 +659,81 @@
     </section>
 
     <!-- ============================================================
-         4. ATELIER
+         4. QUI SOMMES-NOUS
          ============================================================ -->
-    <section class="section" id="atelier">
-      <div class="section-tete apparition">
-        <span class="numero">02</span>
-        <h2>L'atelier</h2>
+    <section class="section ancre" id="qui-sommes-nous">
+      <div class="section-tete">
+        <h2 class="titre-long">Qui <span class="insecable">sommes-nous</span></h2>
       </div>
 
-      <div class="atelier">
-        <p class="atelier-accroche apparition">Entre les abers et la mer, un atelier où l'on prend le temps de bien faire.</p>
-        <div class="atelier-texte">
-          <p class="apparition">À Plouguerneau, au bout du Finistère nord, Côte et Cylindre est né d'une passion simple : la moto, et le plaisir du travail bien fait. Ici, chaque machine est traitée comme si c'était la nôtre.</p>
-          <p class="apparition">Un réglage juste, une pièce choisie avec soin, un serrage vérifié deux fois. C'est dans ces détails que se joue la confiance, et c'est ce qui vous permet de reprendre la route l'esprit tranquille, qu'il vente sur la côte ou que le soleil tape sur les petites routes bretonnes.</p>
-          <div class="signature apparition">Fait main, dans le Finistère</div>
+      <div class="equipe">
+        <figure class="equipe-photo">
+          <picture>
+            <source srcset="mecano.webp" type="image/webp">
+            <img src="mecano.png" width="781" height="713" loading="lazy"
+                 alt="Timothée Draghi penché sur une Honda orange, clé en main, dans un atelier en bois.">
+          </picture>
+          <figcaption>Timothée Draghi, les mains dans une Honda.</figcaption>
+        </figure>
+
+        <div class="equipe-texte">
+          <p class="equipe-accroche">Derrière Côte et Cylindre, il y a Timothée Draghi : un mécano formé chez Honda, qui connaît les motos côté atelier comme côté vente.</p>
+          <p>Timothée a d'abord été mécanicien chez Honda, puis commercial pour la marque. Deux métiers qui lui ont appris la même chose : on conseille bien une moto quand on sait exactement comment elle fonctionne, et on la répare bien quand on écoute celui qui la conduit.</p>
+          <p>Passionné d'auto et de moto, il a passé des années aux côtés de Remise sur Route, une association de restauration de véhicules anciens dans les Yvelines. Démonter, comprendre, remettre en état : c'est là qu'il a pris le goût des mécaniques qu'on fait revivre.</p>
+          <p>Aujourd'hui à Plouguerneau, il met cette double expérience au service des motards du Finistère nord, avec le même soin pour une moto récente que pour une ancienne à remettre sur la route.</p>
+
+          <ol class="parcours" aria-label="Parcours de Timothée Draghi">
+            <li><strong>Honda</strong><span>Mécanicien, puis commercial</span></li>
+            <li><strong>Remise sur Route</strong><span>Restauration de véhicules anciens, dans les Yvelines (78)</span></li>
+            <li><strong>Côte et Cylindre</strong><span>Vente, entretien et réparation à Plouguerneau</span></li>
+          </ol>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         5. CONTACT
+         5. ATELIER (bandeau bleu marine, pleine largeur)
          ============================================================ -->
-    <section class="section" id="contact">
-      <div class="section-tete apparition">
-        <span class="numero">03</span>
+    <div class="bandeau-bleu ancre" id="atelier">
+      <section class="section">
+        <div class="section-tete">
+          <h2>L'atelier</h2>
+        </div>
+
+        <div class="atelier">
+          <p class="atelier-accroche">Entre les abers et la mer, un atelier où l'on prend le temps de bien faire.</p>
+          <div class="atelier-texte">
+            <p>À Plouguerneau, au bout du Finistère nord, Côte et Cylindre est né d'une passion simple : la moto, et le plaisir du travail bien fait. Ici, chaque machine est traitée comme si c'était la nôtre.</p>
+            <p>Un réglage juste, une pièce choisie avec soin, un serrage vérifié deux fois. C'est dans ces détails que se joue la confiance, et c'est ce qui vous permet de reprendre la route l'esprit tranquille, qu'il vente sur la côte ou que le soleil tape sur les petites routes bretonnes.</p>
+            <div class="signature">Fait main, dans le Finistère</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================
+         6. CONTACT
+         ============================================================ -->
+    <section class="section ancre" id="contact">
+      <div class="section-tete">
         <h2>Contact</h2>
       </div>
 
       <dl class="contact">
-        <div class="contact-bloc apparition">
+        <div class="contact-bloc">
           <dt>Adresse</dt>
           <dd>
             2 rue de Tréménach<br>29880 Plouguerneau<br>
             <a class="lien-discret" href="https://www.google.com/maps/dir/?api=1&amp;destination=2%20rue%20de%20Tr%C3%A9m%C3%A9nach%2C%2029880%20Plouguerneau" target="_blank" rel="noopener">Itinéraire</a>
           </dd>
         </div>
-        <div class="contact-bloc apparition">
+        <div class="contact-bloc">
           <dt>Email</dt>
           <dd><a class="lien-texte" href="mailto:coteetcylindre@gmail.com">coteetcylindre@gmail.com</a></dd>
+          <dt>Téléphone</dt>
+          <dd><a class="lien-texte" href="tel:+33743713618">07 43 71 36 18</a></dd>
         </div>
-        <div class="contact-bloc apparition">
+        <div class="contact-bloc">
           <dt>Instagram</dt>
           <dd>
             <!-- ⚠️ À COMPLÉTER : remplacez VOTRE_COMPTE par le nom du compte Instagram
@@ -567,20 +741,35 @@
             <a class="lien-texte" href="https://www.instagram.com/coteetcylindre/" target="_blank" rel="noopener">Côte et Cylindre</a>
           </dd>
         </div>
+        <!-- Horaires d'ouverture (pensez aussi à les modifier dans les données structurées en haut du fichier) -->
+        <div class="contact-bloc contact-horaires">
+          <dt>Horaires d'ouverture</dt>
+          <dd>
+            <dl class="horaires">
+              <dt>Du lundi au vendredi</dt>
+              <dd>10h00 – 13h00 et 14h00 – 18h00</dd>
+              <dt>Samedi et dimanche</dt>
+              <dd>Fermé</dd>
+            </dl>
+          </dd>
+        </div>
       </dl>
     </section>
   </main>
 
   <!-- ============================================================
-       6. PIED DE PAGE
+       7. PIED DE PAGE
        ============================================================ -->
   <footer class="pied">
-    <strong>Côte et Cylindre</strong>
-    <span>2 rue de Tréménach, 29880 Plouguerneau</span>
-    <span>© <span id="annee">2026</span></span>
+    <div class="pied-contenu">
+      <strong>Côte et Cylindre</strong>
+      <span>2 rue de Tréménach, 29880 Plouguerneau</span>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <span>© <span id="annee">2026</span> Côte et Cylindre</span>
+    </div>
   </footer>
 
-  <!-- Bibliothèques : GSAP + ScrollTrigger (cdnjs) et Lenis (défilement fluide) -->
+  <!-- Bibliothèques : GSAP (cdnjs) et Lenis (défilement fluide) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
@@ -711,7 +900,7 @@
       const h = ih * echelle;
       const x = (cw - w) / 2;
       // Quand la moto recule, elle descend un peu pour laisser la place au titre
-      const y = (ch - h) / 2 + (1 - recul) * ch * 0.35;
+      const y = (ch - h) / 2 + (1 - recul) * ch * 0.5;
 
       const marges = w < cw || h < ch;
       if (marges && couleurFond) {
@@ -779,12 +968,12 @@
         onUpdate: () => dessiner(etat.image),
       }, 0);
 
-      // Les 3 phrases apparaissent puis disparaissent, l'une après l'autre
+      // Les 3 étiquettes apparaissent puis disparaissent, l'une après l'autre
       const tranche = D / phrases.length;
       phrases.forEach((phrase, i) => {
         const debut = i * tranche + tranche * 0.05;
-        tl.fromTo(phrase, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: tranche * 0.3, ease: "power2.out" }, debut);
-        tl.to(phrase, { opacity: 0, y: -20, duration: tranche * 0.25, ease: "power2.in" }, debut + tranche * 0.65);
+        tl.fromTo(phrase, { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: tranche * 0.25, ease: "power3.out" }, debut);
+        tl.to(phrase, { opacity: 0, duration: tranche * 0.15, ease: "power2.in" }, debut + tranche * 0.7);
       });
 
       // La moto recule légèrement vers le bas pour laisser la place au titre
@@ -794,29 +983,16 @@
         onUpdate: () => { recul = reculObj.v; dessiner(imageActuelle, true); },
       }, D);
 
-      // Titre final : filet cuivre, nom du garage, sous-titre
-      tl.fromTo(".final-filet", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "power2.out" }, D + 0.2);
-      tl.fromTo(".final h1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" }, D + 0.3);
-      tl.fromTo(".final p", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" }, D + 0.6);
+      // Titre final : barre rouge, nom du garage au pochoir, sous-titre
+      tl.fromTo(".final-filet", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power2.out" }, D + 0.2);
+      tl.fromTo(".final h1", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: "power4.out" }, D + 0.3);
+      tl.fromTo(".final p", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, D + 0.6);
 
       // L'indication « Défiler » apparaît à la fin
       tl.to("#indice", { opacity: 1, duration: 0.6 }, D + 1.2);
-    }
 
-    /* ============================================================
-       APPARITIONS DES TEXTES (fondu + léger glissement vers le haut)
-       ============================================================ */
-    function initApparitions() {
-      if (mouvementReduit) return;
-      gsap.utils.toArray(".apparition").forEach((el) => {
-        gsap.from(el, {
-          opacity: 0,
-          y: 32,
-          duration: 1.1,
-          ease: "power3.out",
-          scrollTrigger: { trigger: el, start: "top 88%", once: true },
-        });
-      });
+      // Mouvement réduit demandé par le système : on affiche directement l'état final
+      if (mouvementReduit) tl.progress(1);
     }
 
     /* ============================================================
@@ -829,13 +1005,13 @@
 
       if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
         // Sans GSAP (hors ligne) : on affiche la moto assemblée et le titre
+        recul = RECUL_FINAL;
         dessiner(TOTAL_FRAMES - 1, true);
         document.querySelectorAll(".final h1, .final p, .final-filet, .indice").forEach((el) => (el.style.opacity = 1));
       } else {
         initDefilement();
-        initOuverture();
-        initApparitions();
         dessiner(0, true);
+        initOuverture();
       }
 
       // Fin du chargement
